@@ -11895,4 +11895,8 @@ h1, .h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.text-justify {
+  text-align: justify;
 }/*# sourceMappingURL=main.css.map */
