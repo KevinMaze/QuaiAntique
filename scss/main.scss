@@ -29,6 +29,7 @@ h1 {
 // HOME
 .hero-scene {
     position: relative;
+    margin-bottom: 15px;
     &::before{
         content: "";
         position: absolute;
@@ -84,3 +85,9 @@ h1 {
     }
 }
 /////////////////////////////////////////////////////////
+
+// //CONNEXION
+// //
+// .div-form {
+//     margin-bottom: 200px;
+// }

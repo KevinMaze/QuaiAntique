@@ -11872,6 +11872,7 @@ h1, .h1 {
 
 .hero-scene {
   position: relative;
+  margin-bottom: 15px;
 }
 .hero-scene::before {
   content: "";
