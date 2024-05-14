@@ -11850,6 +11850,10 @@ html {
   min-height: 100%;
 }
 
+main {
+  margin-bottom: 250px;
+}
+
 footer.footer {
   padding: 15px;
   position: absolute;
@@ -11857,6 +11861,38 @@ footer.footer {
   width: 100%;
 }
 
-main {
-  margin-bottom: 250px;
+p {
+  font-family: "Hind Madurai", serif;
+  font-size: 18px;
+}
+
+h1, .h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-scene {
+  position: relative;
+}
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/verre.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+}
+.hero-scene * {
+  position: relative;
+}
+
+.hero-scene-content {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
