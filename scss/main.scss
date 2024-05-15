@@ -64,7 +64,8 @@ h1 {
 .image-card {
     position: relative;
     &:hover{
-        .titre-image{
+        .titre-image, 
+        .action-image-buttons{
             opacity: 1;
         }
         img{
@@ -83,7 +84,19 @@ h1 {
         opacity: 0;
         font-size: 1.5em;
     }
+    .action-image-buttons{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
 }
+
 /////////////////////////////////////////////////////////
 
 // //CONNEXION
