@@ -1,5 +1,6 @@
 const tokenCookieName = "accesstoken";
 const signoutBtn = document.getElementById("signout-btn");
+const RoleCookieName = "role";
 // Création, récupération cookie
 function setToken(token){
     setCookie(tokenCookieName, token, 7);
@@ -43,7 +44,6 @@ function isConnected(){
     }
 }
 // Gestion role
-const RoleCookieName = "role";
 
 function getRole(){
     return getCookie(RoleCookieName);
@@ -53,5 +53,46 @@ signoutBtn.addEventListener("click", signout);
 
 function signout(){
     eraseCookie(tokenCookieName);
+    eraseCookie(RoleCookieName);
     window.location.reload();
 }
+
+// Affichage btn connected / disconnected
+function showAndhideElementsForRoles(){
+    const userConnected = isConnected();
+    const role = getRole();
+
+    let allElementsToEdit = document.querySelectorAll("[data-show]");
+
+    allElementsToEdit.forEach(element => {
+        switch(element.dataset.show){
+            case "disconnected":
+                if(userConnected){
+                    element.classList.add("d-none");
+                }
+                break;
+            case "connected":
+                if(!userConnected){
+                    element.classList.add("d-none");
+                }
+                break;
+            case "admin":
+                if(!userConnected || role != "admin"){
+                    element.classList.add("d-none");
+                }
+                break;
+            case "client":
+                if(!userConnected || role != "client"){
+                    element.classList.add("d-none");
+                }
+                break;
+        }
+    })
+}
+
+/*
+disconnected
+connected (admin ou client)
+- admin
+- client
+*/
